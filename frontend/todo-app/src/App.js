@@ -3,20 +3,28 @@ import FirstComponent  from './components/lerning-example/FirstComponent'
 import SecondComponent  from './components/lerning-example/SecondComponent'
 import ThirdComponent  from './components/lerning-example/ThirdComponent'
 import Counter from './components/counter/Counter'
-import logo from './logo.svg';
+import TodoApp from './components/todo/TodoApp'
+import logo from './logo.svg'
 import './App.css';
+import './bootstrap.css';
  
 class App extends Component {
   render() {
     return (
       <div className="App">
-      
-      <Counter></Counter>
+        <TodoApp/>
+
+      {/* <Counter></Counter> */}
       
       </div>
     );
   }
 }
+
+
+
+
+
 
 class LearningComponents extends Component{
   render(){
