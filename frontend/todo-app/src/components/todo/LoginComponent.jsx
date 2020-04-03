@@ -17,37 +17,6 @@ class LoginComponent extends Component{
         this.loginClicked = this.loginClicked.bind(this)
     }
 
-
-    loginClicked(event){
-        if(this.state.username==='alpesh' && this.state.password==='alpesh'){
-            AuthenticationService.registerSuccesssfulLogin(this.state.username,this.state.password)
-            console.log('test')
-            this.props.history.push(`/welcome/${this.state.username}`)
-            // console.log('succesful')
-            // this.setState({showSuccessMessage:true})
-            // this.setState({hasLoginFaild:false})
-        }
-        else{
-            console.log('invalid credential')
-            this.setState({showSuccessMessage:false})
-            this.setState({hasLoginFaild:true})
-        }
-      // console.log(this.state) 
-
-
-
-    }
-
-    handleChange(event){
-      //  console.log(this.state)
-
-        this.setState({
-            [event.target.name]:event.target.value
-        })
-       
-    }
-
-   
     render(){
         return(
         <div>
@@ -64,6 +33,28 @@ class LoginComponent extends Component{
         </div>
         </div>
         )
+    }
+
+    loginClicked(event){
+        if(this.state.username==='alpesh' && this.state.password==='alpesh'){
+            AuthenticationService.registerSuccesssfulLogin(this.state.username,this.state.password)
+            this.props.history.push(`/welcome/${this.state.username}`)
+            // console.log('succesful')
+            // this.setState({showSuccessMessage:true})
+            // this.setState({hasLoginFaild:false})
+        }
+        else{
+            console.log('invalid credential')
+            this.setState({showSuccessMessage:false})
+            this.setState({hasLoginFaild:true})
+        }
+      // console.log(this.state) 
+    }
+
+    handleChange(event){ 
+        this.setState({
+            [event.target.name]:event.target.value
+        })
     }
 }
 export default LoginComponent
